@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import PageLogin from '@UI/pages/pageLogin';
+import PageMain from '@UI/pages/pageMain';
 
 
-const LayoutLogin: React.FC = (): JSX.Element => {
+const LayoutMain: React.FC = (): JSX.Element => {
     return (
-        <LayoutLoginForm>
-            <PageLogin />
-        </LayoutLoginForm>
+        <LayoutMainForm>
+            <PageMain />
+        </LayoutMainForm>
     )
 }
 
-const LayoutLoginForm = styled.div`
+const LayoutMainForm = styled.div`
     display: flex;
     position: absolute;
     left: 0;
@@ -24,4 +24,4 @@ const LayoutLoginForm = styled.div`
     justify-content: center;
 `
 
-export default LayoutLogin;
+export default LayoutMain;
