@@ -6,7 +6,7 @@ interface ButtonProps {
     height?: string
     fontWeight?: number | string
     borderRadius?: string
-    backgroundColor: string
+    backgroundColor?: string
     color?: string
     children: string | React.ReactNode
 }
@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps> = ({
     height = "50px", 
     fontWeight = 400, 
     borderRadius = "50px",
-    backgroundColor,
+    backgroundColor="none",
     color = "#000000",
     children
 }): JSX.Element => {
@@ -38,7 +38,7 @@ const Button: React.FC<ButtonProps> = ({
 const ButtonElement = styled.button<ButtonProps>`
     all: unset;
     width: ${({width}) => width};
-    height: ${({height}) => height};
+    height: ${({height}) => height}};
     font-weight: ${({fontWeight}) => fontWeight};
     border-radius: ${({borderRadius}) => borderRadius};
     background-color: ${({backgroundColor}) => backgroundColor};

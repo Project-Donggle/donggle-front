@@ -6,16 +6,11 @@ import {
 } from '@user/images';
 
 import {
-    Button
+    Button,
+    Label
 } from '@user/components';
 
-interface LabelProps{
-    color?: string,
-    fontSize?: string,
-    fontWeight?: number | string,
-    marginTop?: string,
-    children: string | React.ReactNode
-}
+
 
 const WelcomeContent: React.FC = (): JSX.Element => {
     return (
@@ -55,15 +50,6 @@ const WelcomeContent: React.FC = (): JSX.Element => {
         </>
     )
 }
-
-const Label = styled.div<LabelProps>`
-    color: ${({color}) => color};
-    margin-top: ${({marginTop}) => marginTop ?? 0};
-    font-size: ${({fontSize}) => fontSize ?? "1rem" };
-    font-weight: ${({fontWeight}) => fontWeight ?? 400};
-    display: flex;
-    align-items: center;
-`
 
 const Marker = styled.img`
     width: 52px;
