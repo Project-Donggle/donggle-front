@@ -1,6 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import PageMain from '@UI/pages/pageMain';
+
+
+const LayoutMain: React.FC = (): JSX.Element => {
+    return (
+        <LayoutMainForm>
+            <PageMain />
+        </LayoutMainForm>
+    )
+}
+
 const LayoutMainForm = styled.div`
     display: flex;
     position: absolute;
@@ -8,17 +19,9 @@ const LayoutMainForm = styled.div`
     top: 0;
     right: 0;
     bottom: 0;
-    padding-top: 60px;
-    background-color: #ffffff;
+    padding: 60px 0;
+    background-color: #F3F3F3;
     justify-content: center;
 `
-
-const LayoutMain: React.FC = (): JSX.Element => {
-    return (
-        <LayoutMainForm>
-
-        </LayoutMainForm>
-    )
-}
 
 export default LayoutMain;
