@@ -7,14 +7,17 @@ declare global {
 }
 //현재 위,경도 담을 타입
 type LocPosition ={
-    La?: number,
-    Ma?: number ;
+    La: number,
+    Ma: number ;
 }
  
 
 function pageMap() {
     //현재위치스테이트
-    const [currentPosition, setCurrentPosition] = useState<LocPosition>({});
+    const [currentPosition, setCurrentPosition] = useState<LocPosition>({
+        La: 0,
+        Ma: 0
+    });
     
 useEffect(() => {
      //받은 위치와 메세지로 지도와 마커(메세지포함)띄움       
