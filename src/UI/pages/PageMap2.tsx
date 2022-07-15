@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect,useRef } from 'react'
-import { Map, MapMarker,Circle } from 'react-kakao-maps-sdk';
+import { Map, MapMarker,Circle, MarkerClusterer } from 'react-kakao-maps-sdk';
 import styled from 'styled-components';
 interface currentPosition { 
     center: {
@@ -10,7 +10,7 @@ interface currentPosition {
     errMsg: string | null,
     isLoading: boolean,
 }
-type Map
+
 function PageMap2() {
     const [state, setState] = useState<currentPosition>({
         center: {
@@ -20,7 +20,8 @@ function PageMap2() {
         errMsg: null,
         isLoading: false,
     });
-    const mapRef = useRef<Map>(
+    const mapRef = useRef(
+        null
     );
     
     useEffect(() => {
@@ -64,13 +65,21 @@ function PageMap2() {
           height: "450px",
         }}
         level={6} // 지도의 확대 레벨
-        ref = {mapRef}      
+        ref={mapRef}   
       >
-        {!state.isLoading && (
-                  <MapMarker position={state.center} draggable={true} onDragEnd={() => {
-                      const map = mapRef.current;
-                      console.log(map)
-                  }}>
+              {!state.isLoading && (
+                  <MapMarker position={state.center}  draggable={true} onDragEnd={(marker) => { 
+                      console.log(marker.getPosition())
+                      let lat = marker.getPosition().getLat()
+                      let lng = marker.getPosition().getLng()
+                      setState((prev) => ({
+                          ...prev,
+                          center: {
+                              lat: lat,
+                              lng: lng,
+                          },
+                        }))
+                  } }>
             <div style={{ padding: "5px", color: "#000" }}>
             {state.errMsg ? state.errMsg : "여기에 계신가요?!"}
             </div>
