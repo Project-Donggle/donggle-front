@@ -22,7 +22,10 @@
       "@user/*": ["src/domains/user/*"],
       "@global/*": ["src/global/*"],
       "@UI/*": ["src/UI/*"]
-    }
+    },
+    "types": [
+      "kakao.maps.d.ts"
+    ],
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

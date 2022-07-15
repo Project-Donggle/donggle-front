@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+import { Map, CustomOverlayMap, MarkerClusterer} from 'react-kakao-maps-sdk';
 declare global {
   interface Window {
     kakao: any;
